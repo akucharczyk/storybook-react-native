@@ -17,7 +17,7 @@ const Section: React.FC = () => {
   const StorybookUI = require('./storybook').default;
 
   return (
-    <View style={styles.sectionContainer}>
+    <View style={styles.container}>
       <StorybookUI />
     </View>
   );
@@ -31,13 +31,16 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={[backgroundStyle, styles.container]}>
       <Section />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
